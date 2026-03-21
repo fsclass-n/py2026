@@ -11,3 +11,12 @@ gh auth refresh -h github.com -s delete_repo
 # 원격 리포지토리 삭제
 gh repo delete <username>/<repo-name> --yes
 # 예) gh repo delete fsclass-n/team --yes
+
+
+# 업로드
+git add .
+git commit -m "메시지"
+git push -u origin main
+
+# 다운로드
+git pull origin main
