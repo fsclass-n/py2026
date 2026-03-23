@@ -92,3 +92,15 @@ for i in range(11, 20):
     data = "%d번째 줄입니다.\n" % i
     f.write(data)
 f.close()
+
+# 파일 처리 시 주의사항
+# 어떤 문자를 어떤 숫자로 변환할지 정하는 규칙이 인코딩(Encoding)이다.
+# 예를 들어 'A'는 65, 'B'는 66으로 저장하는 식이다.
+# 한글 파일 쓰기
+with open("한글파일.txt", "w", encoding="utf-8") as f:
+    f.write("안녕하세요. 파이썬!")
+
+# 한글 파일 읽기
+with open("한글파일.txt", "r", encoding="utf-8") as f:
+    content = f.read()
+    print(content)

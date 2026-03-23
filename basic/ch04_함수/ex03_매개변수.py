@@ -41,6 +41,7 @@ print(result) # 120
 # 함수 호출 시 키워드=값 형태로 전달하는 매개변수를 받을 때 사용한다.
 # 키워드 매개변수를 사용할 때는 매개변수 앞에 별 2개(**)를 붙인다.
 # 입력받은 키워드 매개변수들을 딕셔너리 형태로 출력
+# kwargs는 'keyword arguments'의 약자이며 args와 마찬가지로 관례적으로 사용한다.
 def print_kwargs(**kwargs):
     print(kwargs)
 
@@ -64,3 +65,33 @@ def mixed_function(name, *args, **kwargs):
     print(f"키워드 인수들: {kwargs}")
 
 mixed_function('홍길동',1,2,3, age=25, city='서울')
+
+# 함수의 인수를 전달하는 방법
+# 매개변수에 초깃값을 미리 설정해 주는 경우
+def say_myself(name, age, man=True):
+    print("나의 이름은 %s 입니다." % name)
+    print("나이는 %d살입니다." % age)
+    if man:
+        print("남자입니다.")
+    else:
+        print("여자입니다.")
+
+say_myself("홍길동", 27)
+say_myself("김길동", 30, True)
+say_myself("이오리", 15, False)
+
+# 초깃값을 설정한 매개변수의 위치이다.
+# 초기화하고 싶은 매개변수는 항상 뒤쪽에 놓아야 한다
+# def say_myself(name, man=True, age): # error
+#     print("나의 이름은 %s 입니다." % name)
+#     print("나이는 %d살입니다." % age)
+#     if man:
+#         print("남자입니다.")
+#     else:
+#         print("여자입니다.")
+
+# SyntaxError: parameter without a default follows parameter with a default
+# # SyntaxError: 기본값이 없는 매개변수가 기본값이 있는 매개변수 뒤에 왔다.
+# say_myself("홍길동", 27)
+
+

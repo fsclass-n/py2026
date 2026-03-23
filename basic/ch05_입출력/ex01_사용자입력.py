@@ -29,7 +29,3 @@ print(height / 100) # 미터 단위로 변환
 age = int(input("나이를 입력하세요: "))
 print(type(age)) # <class 'int'>
 
-# print 자세히 알기
-# print() 함수의 용도는 데이터를 출력하는 것
-a = 123
-print(a)
