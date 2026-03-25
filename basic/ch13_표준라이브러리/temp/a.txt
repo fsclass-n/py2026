@@ -1,0 +1,3 @@
+# 두 값을 곱하기
+def mul(a, b):
+    return a * b
