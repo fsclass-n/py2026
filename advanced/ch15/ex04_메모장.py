@@ -10,7 +10,37 @@ import sys
 # sys.argv는 프로그램 실행 시
 # 입력된 값을 읽어 들이는 파이썬 라이브러리이다.
 option = sys.argv[1]
-memo = sys.argv[2]
+# memo = sys.argv[2]
 
-print(option)
-print(memo)
+print(option) # -a
+# print(memo) # Life is too short
+
+# c:\>python memo.py -a "Life is too short"
+
+# 입력으로 받은 메모를 파일에 쓰도록 코드를 변경
+option = sys.argv[1]
+if option == '-a':
+    memo = sys.argv[2]
+    f = open('memo.txt', 'a')
+    f.write(memo)
+    f.write('\n')
+    f.close()
+
+# 옵션이 -a인 경우에만 memo 값을 읽어 memo.txt에 저장한다.
+
+# 메모를 출력
+# python memo.py -v
+
+option = sys.argv[1]
+
+if option == '-a':
+    memo = sys.argv[2]
+    f = open('memo.txt', 'a')
+    f.write(memo)
+    f.write('\n')
+    f.close()
+elif option == '-v':
+    f = open('memo.txt')
+    memo = f.read()
+    f.close()
+    print(memo)
